@@ -1,23 +1,24 @@
-/* App.css */
+/* App.css - Minimalist Green Edition */
 @import url('https://fonts.googleapis.com');
 
 :root {
-  --bg-dark: #0a0a0c;
-  --card-bg: rgba(23, 23, 26, 0.7);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --accent-blue: #3b82f6; /* Professional Slate Blue */
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --bg-soft: #fcfdfc;        /* Very light mint-white */
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --accent-green: #10b981;   /* Modern Emerald */
+  --accent-soft: #d1fae5;    /* Light Sage tint */
+  --text-main: #064e3b;      /* Deep Forest Green */
+  --text-muted: #64748b;     /* Slate Gray */
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-dark);
-  /* Subtle mesh gradient for depth */
+  background-color: var(--bg-soft);
+  /* Subtle organic gradient for a fresh feel */
   background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.1) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(5, 150, 105, 0.05) 0px, transparent 50%);
   color: var(--text-main);
   min-height: 100vh;
   display: flex;
@@ -28,66 +29,59 @@ body {
 
 /* Professional Card Design */
 .content {
-  padding: 3.5rem;
+  padding: 3rem;
   background: var(--card-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
-  min-width: 440px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 24px; /* More rounded for a modern feel */
+  min-width: 480px;
+  box-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.04);
   transition: transform 0.3s ease;
 }
 
 .nav {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
 /* Refined Nav Links */
 .nav-link {
   position: relative;
-  padding: 10px 24px;
+  padding: 10px 20px;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.925rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-color);
+  border-radius: 99px; /* Pill shape */
+  background: transparent;
+  border: 1px solid transparent;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-/* The "Glow" underline instead of liquid */
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--accent-blue);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-  box-shadow: 0 0 12px var(--accent-blue);
 }
 
 /* Hover States */
 .nav-link:hover {
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--accent-green);
+  background: var(--accent-soft);
   transform: translateY(-1px);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+/* Green Glow underline for Active link */
+.nav-link.active {
+  color: var(--text-main);
+  background: var(--accent-soft);
+  border-color: var(--accent-green);
 }
 
-/* Active/Focus State */
-.nav-link:active {
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.1);
+/* Accessibility & Utility */
+h1, h2, h3 {
+  color: var(--text-main);
+  font-weight: 700;
+  margin-top: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--accent-soft);
+  margin: 30px 0;
 }

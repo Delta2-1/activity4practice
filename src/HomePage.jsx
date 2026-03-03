@@ -1,32 +1,50 @@
 import React, { useEffect } from 'react';
+import './HomePage.css';
+
 const HomePage = () => {
   useEffect(() => {
     console.log("Analytics: Home Page Mounted");
   }, []);
 
+  const topics = [
+    {
+      title: "Conditional Rendering",
+      content: "Displays components only when specific conditions are met using standard logic like if statements or ternary operators."
+    },
+    {
+      title: "useEffect Hook",
+      content: "Handles side effects like API fetching, DOM updates, and subscriptions. It runs after render and can be optimized with dependency arrays."
+    },
+    {
+      title: "BrowserRouter",
+      content: "The foundation for routing, enabling dynamic URL handling without page reloads by leveraging the HTML5 history API."
+    },
+    {
+      title: "Routes & Route",
+      content: "Routes groups your definitions, while Route maps specific paths to components to determine what displays at each URL."
+    },
+    {
+      title: "Link Component",
+      content: "Provides seamless navigation between routes without triggering full page refreshes, preserving your application state."
+    }
+  ];
+
   return (
-    <section className="relative flex flex-col items-center justify-center px-6 py-24 text-center animate-in fade-in duration-700">
-      {/* Subtle Background Glow */}
-      <div className="absolute -top-24 left-1/2 -z-10 h-[400px] w-[600px] -translate-x-1/2 bg-blue-500/10 blur-[120px]" />
+    <div className="home-container">
+      <header className="home-header">
+        <h1>React Essentials</h1>
+        <p>Core concepts for building dynamic web applications.</p>
+      </header>
 
-      <div className="max-w-3xl space-y-6">
-        {/* Modern Tagline */}
-        <span className="inline-block rounded-full bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400 ring-1 ring-inset ring-blue-500/20">
-          New: Smart Price Analysis
-        </span>
-
-        {/* High-Impact Heading */}
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl">
-          Price <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Checker</span>
-        </h1>
-
-        {/* Refined Description */}
-        <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-400">
-          Set your items and unlock real-time market insights. Discover the true 
-          value of your assets with our proprietary pricing engine.
-        </p>
+      <div className="topics-grid">
+        {topics.map((topic, index) => (
+          <div key={index} className="topic-card">
+            <h3>{topic.title}</h3>
+            <p>{topic.content}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

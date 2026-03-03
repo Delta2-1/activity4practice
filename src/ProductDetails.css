@@ -1,0 +1,74 @@
+/* ProductDetails.css */
+.entry-card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #10b981; /* Primary Green */
+  letter-spacing: 0.05em;
+}
+
+.entry-card input {
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid #ecfdf5; /* Very light green */
+  font-size: 1rem;
+  color: #064e3b;
+  background: transparent;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.entry-card input:focus {
+  border-bottom-color: #10b981; /* Highlight on focus */
+}
+
+.button-stack {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-calculate {
+  flex: 2;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-calculate:disabled {
+  background: #d1fae5;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  flex: 1;
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background: #f8fafc;
+}

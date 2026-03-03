@@ -1,13 +1,18 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
-const Layout = () => (
-  <div>
-    <nav>
-      <Link to="/">Home</Link> | <Link to="/price-checker">Price Checker</Link>
+const Layout = () => {
+  return (
+  <div className='layout-container'>
+    <nav className='navbar'>
+      <NavLink to='/' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+      <NavLink to='/Price-Checker' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Price Checker</NavLink>
     </nav>
-    <hr />
-    <Outlet />
-  </div>
+
+    <main className='Main-Content'>
+      <Outlet />
+    </main>
+</div>
 );
+};
 
 export default Layout;
